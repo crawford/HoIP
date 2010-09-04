@@ -1,0 +1,207 @@
+<ui version="4.0" >
+ <class>RobotControllerClass</class>
+ <widget class="QDialog" name="RobotControllerClass" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>594</width>
+    <height>202</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Helper Controller</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout" >
+   <property name="topMargin" >
+    <number>9</number>
+   </property>
+   <property name="bottomMargin" >
+    <number>9</number>
+   </property>
+   <item rowspan="4" row="0" column="0" >
+    <widget class="QLabel" name="label" >
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Expanding" hsizetype="Preferred" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="focusPolicy" >
+      <enum>Qt::StrongFocus</enum>
+     </property>
+     <property name="styleSheet" >
+      <string notr="true" >QWidget:focus {
+	background-color: rgb(128, 200, 128);
+}
+QWidget:!focus {
+	background-color: rgb(255, 128, 128);
+}</string>
+     </property>
+     <property name="frameShape" >
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="text" >
+      <string>Click this box and use your arrow keys to control the robot.</string>
+     </property>
+     <property name="alignment" >
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="wordWrap" >
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1" colspan="2" >
+    <widget class="QLabel" name="label_2" >
+     <property name="text" >
+      <string>Stop Speed</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3" colspan="2" >
+    <widget class="QSpinBox" name="spnStop" >
+     <property name="minimum" >
+      <number>-100</number>
+     </property>
+     <property name="maximum" >
+      <number>100</number>
+     </property>
+     <property name="value" >
+      <number>-5</number>
+     </property>
+    </widget>
+   </item>
+   <item rowspan="5" row="0" column="5" >
+    <widget class="WgtSonar" native="1" name="wgtSonar" >
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Preferred" hsizetype="Expanding" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout" >
+      <item>
+       <widget class="QLabel" name="label_5" >
+        <property name="text" >
+         <string/>
+        </property>
+        <property name="pixmap" >
+         <pixmap resource="icons.qrc" >:/Images/Helper.png</pixmap>
+        </property>
+        <property name="scaledContents" >
+         <bool>false</bool>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="1" colspan="2" >
+    <widget class="QLabel" name="label_3" >
+     <property name="text" >
+      <string>Max Speed Left</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="3" colspan="2" >
+    <widget class="QSpinBox" name="spnMSL" >
+     <property name="minimum" >
+      <number>0</number>
+     </property>
+     <property name="maximum" >
+      <number>100</number>
+     </property>
+     <property name="value" >
+      <number>25</number>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1" colspan="2" >
+    <widget class="QLabel" name="label_4" >
+     <property name="text" >
+      <string>Max Speed Right</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="3" colspan="2" >
+    <widget class="QSpinBox" name="spnMSR" >
+     <property name="minimum" >
+      <number>0</number>
+     </property>
+     <property name="maximum" >
+      <number>100</number>
+     </property>
+     <property name="value" >
+      <number>25</number>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1" colspan="4" >
+    <widget class="QPushButton" name="btnUpdateValues" >
+     <property name="text" >
+      <string>Update Values</string>
+     </property>
+     <property name="autoDefault" >
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="2" >
+    <widget class="QLineEdit" name="txtCommand" />
+   </item>
+   <item row="4" column="2" colspan="2" >
+    <widget class="QPushButton" name="btnSend" >
+     <property name="text" >
+      <string>Send</string>
+     </property>
+     <property name="autoDefault" >
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="4" >
+    <widget class="QPushButton" name="btnBeep" >
+     <property name="focusPolicy" >
+      <enum>Qt::ClickFocus</enum>
+     </property>
+     <property name="text" >
+      <string>Beep</string>
+     </property>
+     <property name="checkable" >
+      <bool>true</bool>
+     </property>
+     <property name="autoDefault" >
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+ <customwidgets>
+  <customwidget>
+   <class>WgtSonar</class>
+   <extends>QWidget</extends>
+   <header>wgtSonar.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>btnBeep</tabstop>
+  <tabstop>label</tabstop>
+  <tabstop>spnStop</tabstop>
+  <tabstop>spnMSL</tabstop>
+  <tabstop>spnMSR</tabstop>
+  <tabstop>btnUpdateValues</tabstop>
+  <tabstop>txtCommand</tabstop>
+  <tabstop>btnSend</tabstop>
+ </tabstops>
+ <resources>
+  <include location="icons.qrc" />
+ </resources>
+ <connections/>
+</ui>

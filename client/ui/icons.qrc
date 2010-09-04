@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="Images" >
+    <file>Helper.png</file>
+  </qresource>
+</RCC>

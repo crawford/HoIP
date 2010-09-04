@@ -1,0 +1,4 @@
+build/*
+release/*
+qrc_icons.cpp
+Makefile*
